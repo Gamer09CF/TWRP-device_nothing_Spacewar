@@ -1,0 +1,34 @@
+# BoardConfig for Nothing Phone 1 (Spacewar) - TWRP
+
+TARGET_ARCH := arm64
+TARGET_BOARD_PLATFORM := lahaina
+
+TARGET_BOOTLOADER_BOARD_NAME := spacewar
+TARGET_DEVICE := spacewar
+
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 134217728
+
+# File systems
+BOARD_HAS_NO_REAL_SDCARD := true
+
+# Recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/etc/twrp.fstab
+RECOVERY_VARIANT := twrp
+
+# TWRP flags
+TW_THEME := portrait_hdpi
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_FB2PNG := true
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
+TW_DEFAULT_LANGUAGE := en
+
+# Kernel
+BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 androidboot.console=ttyMSM0
+BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_PAGESIZE := 4096
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
+
+# AVB
+BOARD_AVB_ENABLE := true
