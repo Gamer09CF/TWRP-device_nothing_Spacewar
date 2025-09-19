@@ -15,6 +15,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a76
 
 TARGET_BOARD_PLATFORM := lahaina
 
+# Fix TWRP Error about building for 32bit
+TARGET_SUPPORTS_64_BIT_APPS := true
+
 TARGET_BOOTLOADER_BOARD_NAME := Spacewar
 TARGET_DEVICE := Spacewar
 
